@@ -1,6 +1,6 @@
 <?php
 
-//$path = $_SERVER['PATH_INFO']; // @note Не работает в Nginx конфиге для Laravel. Пустое значение PATH_INFO
+//$path = $_SERVER['PATH_INFO']; // @note Пустое значение PATH_INFO в Nginx конфиге для Laravel.
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($path === '/help') {
