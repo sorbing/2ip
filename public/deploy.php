@@ -23,7 +23,7 @@ if (!$key || $key !== $config->APP_DEPLOY_KEY) {
 
 echo date('Y-m-d H:i:s') . "\n";
 echo "Run deploy..\n";
-$command = sprintf('cd ../ && sudo -Hu tuner git pull -X theirs 2>&1');
+$command = sprintf('cd ../ && (sudo -Hu tuner git checkout -- . && sudo -Hu tuner git pull -X theirs) 2>&1');
 exec($command, $output, $retCode);
 $text = implode("\n", $output);
 echo $text . "\n";
