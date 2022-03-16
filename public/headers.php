@@ -10,6 +10,8 @@ $sorting = array_fill_keys(array_keys($sorting), '');
 $headers = array_merge($sorting, $headers);
 $headers = array_filter($headers);
 
+$max = max(array_map('strlen', array_keys($headers)));
+
 foreach ($headers as $h => $v) {
-    echo str_pad("$h:", 30) . "$v\n";
+    echo str_pad("$h: ", $max+2) . "$v\n";
 }

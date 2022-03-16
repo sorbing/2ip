@@ -1,12 +1,5 @@
 # HTTP Utils - IP & request checker
 
-## Development
-
-```shell
-./dev-serve.sh
-./tests/run-tests.sh
-```
-
 ## Usage
 
 ```shell
@@ -19,6 +12,21 @@ curl -s 2ip.fun/quality[?ip=x.x.x.x&key=...] - ipdata.co + ipqualityscore.com co
 curl -s 2ip.fun/q
 
 curl 2ip.fun/help
+```
+
+## TODO
+
+```shell
+curl 2ip.fun/bl/x.x.x.x | blacklist/x.x.x.x << https://www.s-sols.com/ru/setup-own-mail-server#whitelist
+curl 2ip.fun/scan|nmap|ports
+```
+
+## Development
+
+```shell
+./dev-serve.sh
+./tests/run-test-all.sh
+./tests/run-test-h.sh
 ```
 
 ## Deploy on your server
