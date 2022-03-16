@@ -2,7 +2,7 @@
 
 $config = require_once __DIR__ . '/../config.php';
 
-$ip = $_REQUEST['ip'] ?? $_SERVER['REMOTE_ADDR'];
+$ip = $_REQUEST['ip'] ?? $_SERVER['X-Forwarded-For'] ?? $_SERVER['REMOTE_ADDR'];
 
 if (@$_REQUEST['key'] !== $config->APP_API_KEY) {
     header('HTTP/1.0 403 Forbidden');

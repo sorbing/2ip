@@ -1,4 +1,4 @@
-<?php header('Content-Type: text/plain'); ?>
+<?php header('Content-Type: text/plain; charset=utf-8'); ?>
 curl -s 2ip.fun
 curl -s 2ip.fun/headers
 curl -s 2ip.fun/h
