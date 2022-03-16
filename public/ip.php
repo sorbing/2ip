@@ -2,7 +2,8 @@
 
 header('Content-Type: text/plain; charset=utf-8');
 
-$clientIp = $_SERVER['X-Forwarded-For'] ?? $_SERVER['REMOTE_ADDR']; // $_SERVER['HTTP_CLIENT_IP']
+// HTTP_X_FORWARDED_FOR, HTTP_CF_CONNECTING_IP, REMOTE_ADDR
+$clientIp = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR']; // $_SERVER['HTTP_CLIENT_IP']
 
 echo "$clientIp\n";
 

@@ -2,7 +2,7 @@
 
 $config = require_once __DIR__ . '/../config.php'; // @todo getenv('IPDATA_API_KEY')
 $isAcceptJson = (stripos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false || isset($_REQUEST['json']));
-$ip = $_REQUEST['ip'] ?? $_SERVER['X-Forwarded-For'] ?? $_SERVER['REMOTE_ADDR'];
+$ip = $_REQUEST['ip'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
 
 if (@$_REQUEST['key'] !== $config->APP_API_KEY) {
     header('HTTP/1.0 403 Forbidden');
